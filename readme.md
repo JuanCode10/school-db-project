@@ -5,7 +5,7 @@ This readme will contain the explanation about database entities, tables, and ot
 
 Next steps:
 
-1. Create `app.py`
+1. Create resources
 2. Crate `schemas.py`
 3. Create models
-4. Create resources
+4. Update `app.py` with the real code.
