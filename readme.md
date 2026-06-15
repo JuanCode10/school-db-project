@@ -2,4 +2,10 @@
 
 This repository contains a basic database setup for a dummy school.
 This readme will contain the explanation about database entities, tables, and other details later.
-#todo: update this readme to explain how to use the db present in here.
+
+Next steps:
+
+1. Create `app.py`
+2. Crate `schemas.py`
+3. Create models
+4. Create resources
