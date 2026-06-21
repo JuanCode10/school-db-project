@@ -4,20 +4,20 @@ from models import SchoolModel
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 
 from db import db
-from schemas import PlainSchoolSchema
+from schemas import PlainSchoolSchema, SchoolSchema
 
 blp = Blueprint("school", __name__, description="Operations on schools.")
 
 @blp.route("/school")
 class School(MethodView):
 
-    @blp.response(200, PlainSchoolSchema(many=True))
+    @blp.response(200, SchoolSchema(many=True))
     def get(self):
         """Get all schools."""
         return SchoolModel.query.all()
     
-    @blp.arguments(PlainSchoolSchema)
-    @blp.response(201, PlainSchoolSchema)
+    @blp.arguments(SchoolSchema)
+    @blp.response(201, SchoolSchema)
     def post(self, school_data):
         """Crete a store."""
         school = SchoolModel(**school_data)
@@ -34,7 +34,7 @@ class School(MethodView):
 @blp.route("/school/<string:school_id>")
 class SpecificSchool(MethodView):
 
-    @blp.response(200, PlainSchoolSchema)
+    @blp.response(200, SchoolSchema)
     def get(self, school_id):
         """Get school with specific id."""
         school = SchoolModel.query.get_or_404(school_id)

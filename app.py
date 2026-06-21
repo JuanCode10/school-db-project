@@ -7,9 +7,9 @@ from db import db
 # Import Models
 import models
 
-
 # Import Blueprints
 from resources.school import blp as SchoolBlueprint
+from resources.student import blp as StudentBlueprint
 
 def create_app(db_url=None):
 
@@ -39,5 +39,6 @@ def create_app(db_url=None):
 
     # Add blueprints
     api.register_blueprint(SchoolBlueprint)
+    api.register_blueprint(StudentBlueprint)
 
     return app
