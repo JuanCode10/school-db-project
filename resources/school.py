@@ -31,7 +31,7 @@ class School(MethodView):
 
         return school
     
-@blp.route("/school/<string:school_id>")
+@blp.route("/school/<int:school_id>")
 class SpecificSchool(MethodView):
 
     @blp.response(200, SchoolSchema)
