@@ -5,11 +5,11 @@ from flask_smorest import Api
 from db import db
 
 # Import Models
-# import models #todo: implement models for data validation
+import models
 
 
 # Import Blueprints
-# from resources.school import blp as SchoolBlueprint
+from resources.school import blp as SchoolBlueprint
 
 def create_app(db_url=None):
 
@@ -38,6 +38,6 @@ def create_app(db_url=None):
         db.create_all()
 
     # Add blueprints
-    # api.register_blueprint(SchoolBlueprint) #TODO: code school blueprint
+    api.register_blueprint(SchoolBlueprint)
 
     return app
